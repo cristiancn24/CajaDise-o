@@ -1,0 +1,38 @@
+﻿<Application x:Class="CajaDiseño.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:CajaDiseño"
+             xmlns:viewModel ="clr-namespace:CajaDiseño.MVVM.ViewModel"
+             xmlns:view ="clr-namespace:CajaDiseño.MVVM.View"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source= "Theme/MenuButtonTheme.xaml"/>
+                <ResourceDictionary Source= "Theme/TextboxTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewModel:ProductosViewModel}">
+                <view:MenuView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:ReportesViewModel}">
+                <view:VentasView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:EnviosViewModel}">
+                <view:ComprasView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:ReparacionesViewModel}">
+                <view:ReparacionesView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:ProductosViewModel2}">
+                <view:ProductosView2 />
+            </DataTemplate>
+
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
